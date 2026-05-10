@@ -459,24 +459,24 @@ tbl_chitietdonhang (
 
 **Trang Đăng Nhập Admin:**
 
-<img src="./web_mysqli/view/images/admin-login.jpg" width="320" style="display:block; margin:10px auto; border-radius:8px;">
+<img src="./web_mysqli/view/images/admin-login.jpg" width="500" style="display:block; margin:10px auto; border-radius:8px;">
 
 **Dashboard Admin (Trang Chủ):**
 
-<img src="./web_mysqli/view/images/admin-dashboard.jpg" width="320" style="display:block; margin:10px auto; border-radius:8px;">
+<img src="./web_mysqli/view/images/admin-dashboard.jpg" width="500" style="display:block; margin:10px auto; border-radius:8px;">
 
 ### 👥 Khu Vực Customer (Kiosk)
 
 **Trang Chào Mừng (Welcome):**
 
-<img src="./web_mysqli/view/images/customer-welcome.jpg" width="320" style="display:block; margin:10px auto; border-radius:8px;">
+<img src="./web_mysqli/view/images/customer-welcome.jpg" width="500" style="display:block; margin:10px auto; border-radius:8px;">
 
 **Trang Chủ - Chọn Món (Menu):**
 
-<img src="./web_mysqli/view/images/customer-menu-1.jpg" width="320" style="display:block; margin:10px auto; border-radius:8px;">
-<img src="./web_mysqli/view/images/customer-menu-2.jpg" width="320" style="display:block; margin:10px auto; border-radius:8px;">
-<img src="./web_mysqli/view/images/customer-menu-3.jpg" width="320" style="display:block; margin:10px auto; border-radius:8px;">
-<img src="./web_mysqli/view/images/customer-menu-4.jpg" width="320" style="display:block; margin:10px auto; border-radius:8px;">
+<img src="./web_mysqli/view/images/customer-menu-1.jpg" width="500" style="display:block; margin:10px auto; border-radius:8px;">
+<img src="./web_mysqli/view/images/customer-menu-2.jpg" width="500" style="display:block; margin:10px auto; border-radius:8px;">
+<img src="./web_mysqli/view/images/customer-menu-3.jpg" width="500" style="display:block; margin:10px auto; border-radius:8px;">
+<img src="./web_mysqli/view/images/customer-menu-4.jpg" width="500" style="display:block; margin:10px auto; border-radius:8px;">
 
 ---
 
