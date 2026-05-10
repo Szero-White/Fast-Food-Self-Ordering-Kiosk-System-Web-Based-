@@ -597,5 +597,3 @@ tbl_chitietdonhang (
 <img src="https://img.shields.io/badge/FastFood-Kiosk-orange?style=for-the-badge" />
 </p>
 
-#   F a s t - F o o d - S e l f - O r d e r i n g - K i o s k - S y s t e m - W e b - B a s e d -  
- 
