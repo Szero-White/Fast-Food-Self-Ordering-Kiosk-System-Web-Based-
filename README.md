@@ -355,9 +355,6 @@ Hệ thống hỗ trợ 2 phương thức thanh toán:
 3. Nếu chọn **Tiền mặt**: Hướng dẫn thanh toán tại quầy
 4. Bấm "✅ Hoàn tất thanh toán" để xác nhận
 
-![Thanh toán QR](./web_mysqli/view/images/payment-qr-screenshot.png) 
-![Thanh toán tiền mặt](./web_mysqli/view/images/payment-cash-screenshot.png)
-
 > ⚠️ **Lưu ý**: Đây là hệ thống **giả lập thanh toán**, không kết nối với cổng thanh toán thật. Mã QR là mô phỏng, không có giá trị thực tế.
 
 ### 🔄 Reset Phiên
