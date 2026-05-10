@@ -544,7 +544,7 @@ tbl_chitietdonhang (
 <td align="center">
 <img src="https://img.shields.io/badge/Nguyễn_Công_Toàn-52200271-blue?style=flat-square" />
 <br>
-<strong>📧 Liên hệ:</strong> congtoannguyen304@gmail.com
+<strong>📧 Liên hệ:</strong> congtoan2k4@gmail.com
 <br>
 <strong🔗 GitHub:</strong> <a href="https://github.com/Szero-White">@Szero-White</a>
 </td>
