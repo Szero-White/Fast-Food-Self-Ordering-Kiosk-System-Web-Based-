@@ -1,5 +1,5 @@
 <?php
-    include('../../config/config.php');
+    include(__DIR__ . '/../../config/config.php');
 
     $tendanhmucbv = $_POST['tendanhmucbaiviet'];
     $thutu = $_POST['thutu'];

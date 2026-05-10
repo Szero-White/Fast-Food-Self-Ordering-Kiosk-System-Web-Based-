@@ -3,11 +3,15 @@ body {
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-    background-color: black;
+    background-color: black !important;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .wrapper {
     background-color: black;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .header {
@@ -62,20 +66,20 @@ ul.list_header li a {
 }
 
 .main {
-    border: 1px solid black;
     height: 100%;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
     background-color: black;
+    display: flex;
+    justify-content: center;
 }
 
 
 
 .maincontent {
     height: auto;
-    width: 76%;  
-    margin: auto;
-    float: right;
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
     padding-top: 14px;
     background-color: black;

@@ -1,98 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Glassmorphism Footer CSS -->
+<style>
+    .glass-footer {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 0;
+        margin-top: 30px;
+        position: relative;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@5.0.0/dist/css/ionicons.min.css">
-    <style>
-        .footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            border-top: 1px solid white;
-            border-radius: 2px;
-            margin-top: 11px;
-        }
+    .glass-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    }
 
-        .footer_logo {
-            width: 30%;
-            background-color: black;
-        }
+    .glass-footer-inner {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
-        .footer_logo img {
-            width: 25%;
-            height: auto;
-            margin-left: 181px;
-            border-radius: 20px;
-        }
+    .glass-footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(255,255,255,0.15);
+        padding: 8px 16px 8px 8px;
+        border-radius: 50px;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
 
-        .footer_menu {
-            width: 40%;
-            background-color: black;
-        }
+    .glass-footer-brand img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid rgba(255,255,255,0.5);
+    }
 
-        .footer_menu ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: black;
-        }
+    .glass-footer-brand span {
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
 
-        .footer_menu li {
-            padding: 0 15px;
+    .glass-footer-info {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        }
+    .glass-info-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255,255,255,0.9);
+        font-size: 0.9rem;
+        background: rgba(255,255,255,0.1);
+        padding: 8px 16px;
+        border-radius: 25px;
+        border: 1px solid rgba(255,255,255,0.15);
+    }
 
-        .footer_menu a {
-            color: white;
-            text-decoration: none;
-            background-color: black;
-        }
+    .glass-info-item i {
+        font-size: 1rem;
+    }
 
-        .footer_contact {
-            width: 30%;
-            color: white;
-            background-color: black;
+    .glass-info-item a {
+        color: #ffeaa7;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .glass-info-item a:hover {
+        color: #fab1a0;
+        text-decoration: underline;
+    }
+
+    .glass-footer-social {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .glass-social-btn {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.15);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .glass-social-btn:hover {
+        background: white;
+        color: #764ba2;
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .glass-footer-bottom {
+        background: rgba(0,0,0,0.2);
+        padding: 12px;
+        text-align: center;
+        color: rgba(255,255,255,0.7);
+        font-size: 0.85rem;
+    }
+
+    .glass-footer-bottom strong {
+        color: #ffeaa7;
+    }
+
+    @media (max-width: 768px) {
+        .glass-footer-inner {
+            flex-direction: column;
+            padding: 20px;
             text-align: center;
         }
-
-        .footer_contact a {
-            color: white;
-            text-decoration: none;
-            font-size: 2.5em;
-            padding-right: 10px;
-            background-color: black;
+        
+        .glass-footer-info {
+            flex-direction: column;
+            gap: 10px;
         }
-    </style>
-</head>
+    }
+</style>
 
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-
-    <div class="footer">
-        <div class="footer_logo">
-            <img src="images/1200_50/logo.jpg" alt="">
+<!-- Glassmorphism Footer -->
+<footer class="glass-footer">
+    <div class="glass-footer-inner">
+        <div class="glass-footer-brand">
+            <img src="images/1200_50/logo.jpg" alt="FastFood Logo">
+            <span>FastFood</span>
         </div>
 
-        <div style="color: white;" class="footer_menu">
-            <ul>
-                <li>Địa chỉ: Quận 7, Thành phố Hồ Chí Minh</li>
-                <li>Email: congtoan2k4@example.com</li>
-            </ul>
+        <div class="glass-footer-info">
+            <div class="glass-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Quận 7, TP.HCM</span>
+            </div>
+            <div class="glass-info-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:congtoan2k4@gmail.com">congtoan2k4@gmail.com</a>
+            </div>
+            <div class="glass-info-item" title="Hotline: 1900 6099">
+                <i class="fas fa-phone"></i>
+                <span>1900 6099</span>
+            </div>
         </div>
 
-        <div class="footer_contact">
-            <h3>Liên hệ</h3>
-            <a href="https://www.facebook.com/DominosPizzaVietnam"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-            <a href="https://www.youtube.com/@dominos"><ion-icon name="logo-youtube"></ion-icon></a>
+        <div class="glass-footer-social">
+            <a href="#" class="glass-social-btn" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="glass-social-btn" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="glass-social-btn" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
         </div>
     </div>
-</body>
-
-</html>
+    
+    <div class="glass-footer-bottom">
+        © 2026 <strong>FastFood</strong> - Đặt Món Nhanh Chóng |Author Nguyen Cong Toan ❤️
+    </div>
+</footer>

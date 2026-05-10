@@ -1,83 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$id_baiviet = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            font-family: Arial, sans-serif;
-        }
+if ($id_baiviet <= 0) {
+    echo '<div style="text-align:center; padding:50px; color:white;"><h2>📰 Bài viết không tồn tại</h2></div>';
+    return;
+}
 
-        .wrapper_chitiet {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+$sql_bv = "SELECT * FROM tbl_baiviet, tbl_danhmucbaiviet 
+           WHERE tbl_baiviet.id_danhmuc = tbl_danhmucbaiviet.id_baiviet 
+           AND tbl_baiviet.id_bv = '$id_baiviet' 
+           LIMIT 1";
+$query_bv = mysqli_query($mysqli, $sql_bv);
+$row_bv = mysqli_fetch_array($query_bv);
 
-        .wrapper_chitiet h3 {
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
+if (!$row_bv) {
+    echo '<div style="text-align:center; padding:50px; color:white;"><h2>📰 Không tìm thấy bài viết</h2></div>';
+    return;
+}
+?>
 
-        .hinhanh_sanpham {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .hinhanh_sanpham img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .chitiet_sanpham p {
-            margin-bottom: 15px;
-        }
-
-        .chitiet_sanpham p span {
-            font-weight: bold;
-        }
-
-    </style>
-</head>
-
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <?php
-   
-
-    $sql_bv = "SELECT * FROM tbl_baiviet, tbl_danhmucbaiviet WHERE tbl_baiviet.id_danhmuc=tbl_danhmucbaiviet.id_baiviet AND tbl_baiviet.id_bv = '$_GET[id]' LIMIT 1";
-    $query_bv = mysqli_query($mysqli, $sql_bv);
-
-    while ($row_bv = mysqli_fetch_array($query_bv)) {
-    ?>
-        <div class="wrapper_chitiet">
-            <h3 style="color: maroon;"><?php echo $row_bv['tenbaiviet'] ?></h3>
-            <div class="hinhanh_sanpham">
-                <img src="../admincp/modules/quanlybaiviet/uploads_bv/<?php echo $row_bv['hinhanh'] ?>" alt="Hình ảnh sản phẩm">
-            </div>
-            <div class="chitiet_sanpham">
-                <p><span>Danh mục bài viết:</span> <?php echo $row_bv['tendanhmucbv'] ?></p>
-                <p><span>Tóm tắt bài viết:</span> <?php echo $row_bv['tomtat'] ?></p>
-                <p><span>Nội dung bài viết:</span> <?php echo $row_bv['noidung'] ?></p>
-            </div>
-        </div>
-    <?php
+<style>
+    .news-detail {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 15px;
     }
+    
+    /* Header */
+    .news-detail-header {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 25px;
+    }
+    
+    .news-detail-category {
+        color: #ff6b6b;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    
+    .news-detail-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.4;
+        margin: 0 0 12px 0;
+    }
+    
+    .news-detail-date {
+        color: #ccc;
+        font-size: 0.9rem;
+    }
+    
+    /* Image */
+    .news-detail-image {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    .news-detail-image img {
+        width: 100%;
+        max-width: 600px;
+        max-height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    
+    /* Content */
+    .news-detail-content {
+        color: #eee;
+        line-height: 1.8;
+        font-size: 1rem;
+    }
+    
+    .news-detail-content p {
+        margin-bottom: 16px;
+    }
+    
+    /* Summary highlight */
+    .news-detail-summary {
+        background: #2a2a2a;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        font-style: italic;
+        color: #ddd;
+        border-left: 3px solid #ff6b6b;
+    }
+    
+    /* Navigation */
+    .news-detail-nav {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+    }
+    
+    .news-detail-btn {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.95rem;
+        border: 1px solid #555;
+        border-radius: 4px;
+        transition: all 0.2s;
+        background: #333;
+    }
+    
+    .news-detail-btn:hover {
+        background: #444;
+        border-color: #666;
+    }
+</style>
 
-    $mysqli->close();
-    ?>
-</body>
+<div class="news-detail">
+    <!-- Header -->
+    <div class="news-detail-header">
+        <div class="news-detail-category"><?php echo $row_bv['tendanhmucbv']; ?></div>
+        <h1 class="news-detail-title"><?php echo $row_bv['tenbaiviet']; ?></h1>
+        <div class="news-detail-date">
+            📅 <?php echo date('d/m/Y', strtotime('now')); ?> • Tin tức khuyến mãi
+        </div>
+    </div>
+    
+    <!-- Image -->
+    <div class="news-detail-image">
+        <img src="uploads/<?php echo $row_bv['hinhanh']; ?>" 
+             alt="<?php echo $row_bv['tenbaiviet']; ?>"
+             onerror="this.src='uploads/news-placeholder.jpg'">
+    </div>
+    
+    <!-- Summary -->
+    <div class="news-detail-summary">
+        <?php echo nl2br($row_bv['tomtat']); ?>
+    </div>
+    
+    <!-- Content -->
+    <div class="news-detail-content">
+        <?php echo nl2br($row_bv['noidung']); ?>
+    </div>
+    
+    <!-- Navigation -->
+    <div class="news-detail-nav">
+        <a href="index.php?quanly=danhmucbaiviet&id=<?php echo $row_bv['id_danhmuc']; ?>" class="news-detail-btn">
+            ← Quay lại
+        </a>
+        <a href="index.php" class="news-detail-btn">
+            🏠 Trang chủ
+        </a>
+    </div>
+</div>
 
-</html>
