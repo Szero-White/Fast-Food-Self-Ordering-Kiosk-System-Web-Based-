@@ -190,79 +190,17 @@ cd FastFood_Menu_Advertisement_Web
 
 #### 🗄️ Bước 2: Import Database
 
-**Cách 1: Dùng MySQL Command Line**
-```bash
-# Mở terminal/command prompt
-mysql -u root -p < web_sqli.sql
-
-# Hoặc nếu MySQL có password
-mysql -u root -pYourPassword < web_sqli.sql
-```
-
-**Cách 2: Dùng phpMyAdmin (Dễ nhất)**
+**Cách : Dùng phpMyAdmin**
 1. Mở XAMPP Control Panel → Start Apache + MySQL
 2. Truy cập: http://localhost/phpmyadmin
 3. Click **"Import"** tab
 4. Chọn file `web_sqli.sql`
 5. Click **"Go"**
 
-**Cách 3: Cài đặt thêm các bảng mở rộng (Chatbot + Security Question)**
-```bash
-cd web_mysqli
-
-# Cài bảng lịch sử chatbot
-php install_chatbot_table.php
-
-# Cài bảng câu hỏi bảo mật  
-php install_security_question.php
-```
-
-#### ⚙️ Bước 3: Cấu Hình Kết Nối Database
-
-Chỉnh sửa **2 file config** (đều giống nhau):
-
-📁 `web_mysqli/admincp/config/config.php`  
-📁 `web_mysqli/view/config/config.php`
-
-```php
-<?php
-// ⚠️ Sửa port nếu XAMPP dùng port khác 3306
-// Mặc định: "localhost"
-// Nếu XAMPP port 3307: "localhost:3307"
-// Nếu XAMPP port 3308: "localhost:3308"
-
-$mysqli = new mysqli("localhost", "root", "", "web_sqli");
-
-if ($mysqli->connect_error) {
-    die("❌ Kết nối thất bại: " . $mysqli->connect_error);
-}
-
-$mysqli->set_charset("utf8mb4");
-?>
-```
-
----
 
 ## 🖥️ CÁCH CHẠY 2 TRANG ADMIN & CUSTOMER
 
-### 🎯 CÁCH 1: Chạy Cùng 1 Server (Khuyến nghị cho người mới)
-
-Chỉ cần **1 terminal duy nhất**:
-
-```bash
-cd web_mysqli
-php -S localhost:8000
-```
-
-**Truy cập:**
-| Trang | URL | Ghi chú |
-|-------|-----|---------|
-| 🖥️ **Customer** | `http://localhost:8000/view/` | Trang chính cho khách hàng |
-| 🔐 **Admin** | `http://localhost:8000/admincp/login.php` | Trang quản trị |
-
----
-
-### 🚀 CÁCH 2: Chạy 2 Server Riêng Biệt (Khuyến nghị cho Test)
+### 🚀 CÁCH : Chạy 2 Server Riêng Biệt (Khuyến nghị cho Test)
 
 **💡 Ưu điểm:** Test đồng thời 2 trang, không bị xung đột session
 
@@ -405,11 +343,22 @@ $_SESSION['cart'] = [
 
 ### 💳 Thanh Toán
 
-- 💵 **Tiền mặt** (Cash)
-- 💳 **Thẻ ngân hàng** (Card)
-- 📱 **Ví điện tử** (E-Wallet)
+Hệ thống hỗ trợ 2 phương thức thanh toán:
 
-> ⚠️ **Lưu ý**: Đây là hệ thống **giả lập thanh toán**, không kết nối với cổng thanh toán thật.
+- 📱 **Quét mã QR / Chuyển khoản** (`transfer`) - Mặc định
+- 💵 **Tiền mặt tại quầy** (`cash`)
+
+**Quy trình thanh toán:**
+
+1. Khách hàng chọn phương thức thanh toán từ 2 lựa chọn
+2. Nếu chọn **QR**: Hiển thị mã QR để quét thanh toán
+3. Nếu chọn **Tiền mặt**: Hướng dẫn thanh toán tại quầy
+4. Bấm "✅ Hoàn tất thanh toán" để xác nhận
+
+![Thanh toán QR](./web_mysqli/view/images/payment-qr-screenshot.png) 
+![Thanh toán tiền mặt](./web_mysqli/view/images/payment-cash-screenshot.png)
+
+> ⚠️ **Lưu ý**: Đây là hệ thống **giả lập thanh toán**, không kết nối với cổng thanh toán thật. Mã QR là mô phỏng, không có giá trị thực tế.
 
 ### 🔄 Reset Phiên
 
@@ -507,7 +456,30 @@ tbl_chitietdonhang (
 
 ---
 
-## 📸 Demo Giao Diện
+## 📸 Ảnh Minh Họa Hệ Thống
+
+### 🔐 Khu Vực Admin
+
+**Trang Đăng Nhập Admin:**
+![Admin Login](./web_mysqli/view/images/admin-login.jpg)
+
+**Dashboard Admin (Trang Chủ):**
+![Admin Dashboard](./web_mysqli/view/images/admin-dashboard.jpg)
+
+### 👥 Khu Vực Customer (Kiosk)
+
+**Trang Chào Mừng (Welcome):**
+![Customer Welcome](./web_mysqli/view/images/customer-welcome.jpg)
+
+**Trang Chủ - Chọn Món (Menu):**
+![Customer Menu 1](./web_mysqli/view/images/customer-menu-1.jpg)
+![Customer Menu 2](./web_mysqli/view/images/customer-menu-2.jpg)
+![Customer Menu 3](./web_mysqli/view/images/customer-menu-3.jpg)
+![Customer Menu 4](./web_mysqli/view/images/customer-menu-4.jpg)
+
+---
+
+## 📸 Demo Giao Diện Minh Họa
 
 ### 🖥️ Màn Hình Chờ (Welcome)
 
