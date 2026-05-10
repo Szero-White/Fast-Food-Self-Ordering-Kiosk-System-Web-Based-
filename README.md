@@ -1,4 +1,4 @@
-# 🍔 FastFood Kiosk - Hệ Thống Gọi Món Tự Động + AI Chatbot �
+# 🍔 FastFood Kiosk - Hệ Thống Gọi Món Tự Động + AI Chatbot 
 
 <p align="center">
   <img src="https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white&style=for-the-badge" />
