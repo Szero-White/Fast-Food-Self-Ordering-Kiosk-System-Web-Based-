@@ -458,21 +458,21 @@ tbl_chitietdonhang (
 ### 🔐 Khu Vực Admin
 
 **Trang Đăng Nhập Admin:**
-![Admin Login](./web_mysqli/view/images/admin-login.jpg)
+<img src="./web_mysqli/view/images/admin-login.jpg" width="400" height="auto" alt="Admin Login">
 
 **Dashboard Admin (Trang Chủ):**
-![Admin Dashboard](./web_mysqli/view/images/admin-dashboard.jpg)
+<img src="./web_mysqli/view/images/admin-dashboard.jpg" width="400" height="auto" alt="Admin Dashboard">
 
 ### 👥 Khu Vực Customer (Kiosk)
 
 **Trang Chào Mừng (Welcome):**
-![Customer Welcome](./web_mysqli/view/images/customer-welcome.jpg)
+<img src="./web_mysqli/view/images/customer-welcome.jpg" width="400" height="auto" alt="Customer Welcome">
 
 **Trang Chủ - Chọn Món (Menu):**
-![Customer Menu 1](./web_mysqli/view/images/customer-menu-1.jpg)
-![Customer Menu 2](./web_mysqli/view/images/customer-menu-2.jpg)
-![Customer Menu 3](./web_mysqli/view/images/customer-menu-3.jpg)
-![Customer Menu 4](./web_mysqli/view/images/customer-menu-4.jpg)
+<img src="./web_mysqli/view/images/customer-menu-1.jpg" width="400" height="auto" alt="Customer Menu 1">
+<img src="./web_mysqli/view/images/customer-menu-2.jpg" width="400" height="auto" alt="Customer Menu 2">
+<img src="./web_mysqli/view/images/customer-menu-3.jpg" width="400" height="auto" alt="Customer Menu 3">
+<img src="./web_mysqli/view/images/customer-menu-4.jpg" width="400" height="auto" alt="Customer Menu 4">
 
 ---
 
